@@ -1,0 +1,18 @@
+<div class="sites-indexes" ng-controller="SitesIndexesTableController">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th ng-repeat="url in urls">{{url}}</th>
+                <th>AVG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(site, urlsTests) in tests">
+                <td>{{site}}</td>
+                <td ng-repeat="url in urls">{{urlsTests[url].googleIndex}}</td>
+                <td>{{urlsTests.avgGoogleIndex | number : 2}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
